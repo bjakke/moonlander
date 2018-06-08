@@ -49,6 +49,7 @@ class SocketConnector extends Connector {
                 greetServer();
                 break;
             } catch (Exception e) {
+            	e.printStackTrace(); //debug log
                 if (i < triesAmount - 1 && socket != null) {
                     logger.warning("SocketConnector failed to connect to Rocket. Trying again.");
                     // Close socket if it has been opened already
@@ -71,6 +72,7 @@ class SocketConnector extends Connector {
         try {
             socket = new Socket(host, port);
         } catch (Exception e) {
+        	e.printStackTrace();
             logger.warning(String.format("Connection to %s:%d failed.", host, port));
             throw e;
         }
@@ -105,7 +107,7 @@ class SocketConnector extends Connector {
         logger.finer("Greetings read successfully.");
 
         if (!SERVER_GREET.equals(new String(greet))) {
-            logger.severe("Server didn't send correct greetings.");
+            logger.severe("Server didn't send correct greetings., received: "+ new String(greet));
             throw new Exception("Greetings mismatch");
         }
     }
