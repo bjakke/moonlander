@@ -92,7 +92,7 @@ class SocketConnector extends Connector {
         
         // Write our greetings
         out.writeBytes(CLIENT_GREET);
-
+        out.flush();
         logger.finer("Greetings sent. Now reading greetings from Rocket...");
 
         // Expect server to return with correct greetings
@@ -129,6 +129,7 @@ class SocketConnector extends Connector {
             out.writeByte(Commands.GET_TRACK);
             out.writeInt(name.length());
             out.writeBytes(name);
+            out.flush();
         } catch (Exception e) {
             logger.severe("Communication with Rocket failed!");
         }
@@ -146,6 +147,7 @@ class SocketConnector extends Connector {
         try {
             out.writeInt(Commands.SET_ROW);
             out.writeInt(row);
+            out.flush();
         } catch (Exception e) {
             logger.severe("Communication with Rocket failed!");
         }
