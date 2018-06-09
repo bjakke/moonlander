@@ -4,6 +4,8 @@ package moonlander.library;
 import java.util.HashMap;
 import java.net.Socket;
 import java.io.DataOutputStream;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.DataInputStream;
 import java.util.logging.Logger;
 import java.io.IOException;
@@ -76,8 +78,8 @@ class SocketConnector extends Connector {
             logger.warning(String.format("Connection to %s:%d failed.", host, port));
             throw e;
         }
-        out = new DataOutputStream(socket.getOutputStream());
-        in = new DataInputStream(socket.getInputStream());
+        out = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+        in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
 
         logger.finer("Connection to Rocket established.");
     }
@@ -145,7 +147,7 @@ class SocketConnector extends Connector {
         logger.finest("Communicating row="+row+" change to rocket");
 
         try {
-            out.writeInt(Commands.SET_ROW);
+            out.writeByte(Commands.SET_ROW);
             out.writeInt(row);
             out.flush();
         } catch (Exception e) {
