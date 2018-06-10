@@ -7,17 +7,18 @@
 	<version>0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<!-- Some properties are defined in build.properties -->
-		<lib.date>TODO</lib.date>
-		<lib.copyright>TODO</lib.copyright>
-		<lib.version>1</lib.version>
+		<lib.date>${maven.build.timestamp}</lib.date>
 		<lib.name>Moonlander</lib.name>
+		<lib.prettyName>Moonlander</lib.prettyName>
+		<lib.version>1</lib.version>
+		
 		<lib.authorList>[Antti Hirvonen](http://github.com/anttihirvonen)</lib.authorList>
 		<lib.author.name>Antti Hirvonen</lib.author.name>
 		<lib.author.url>http://github.com/anttihirvonen</lib.author.url>
 		<lib.author>${author.name} ${author.url}</lib.author>
 		<lib.url>http://github.com/anttihirvonen/moonlander</lib.url>
-		<lib.category>Animation</lib.category>
 	</properties>
 
 	<dependencies>
