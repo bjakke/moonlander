@@ -7,8 +7,17 @@
 	<version>0-SNAPSHOT</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Some properties are defined in build.properties -->
+		<lib.date>TODO</lib.date>
+		<lib.copyright>TODO</lib.copyright>
 		<lib.version>1</lib.version>
 		<lib.name>Moonlander</lib.name>
+		<lib.authorList>[Antti Hirvonen](http://github.com/anttihirvonen)</lib.authorList>
+		<lib.author.name>Antti Hirvonen</lib.author.name>
+		<lib.author.url>http://github.com/anttihirvonen</lib.author.url>
+		<lib.author>${author.name} ${author.url}</lib.author>
+		<lib.url>http://github.com/anttihirvonen/moonlander</lib.url>
+		<lib.category>Animation</lib.category>
 	</properties>
 
 	<dependencies>
@@ -44,6 +53,24 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.0.0</version>
+				<executions>
+					<execution>
+						<phase>initialize</phase>
+						<goals>
+							<goal>read-project-properties</goal>
+						</goals>
+						<configuration>
+							<files>
+								<file>${basedir}/build.properties</file>
+							</files>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -110,17 +137,33 @@
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-					<descriptors>
-						<descriptor>${basedir}/src/assembly/processing-lib-style.xml</descriptor>
-					</descriptors>
+
 				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id> <!-- this is used for inheritance merges -->
-						<phase>package</phase> <!-- bind to the packaging phase -->
+						<id>make-lib</id>
+						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
+						<configuration>
+							<appendAssemblyId>false</appendAssemblyId>
+							<descriptors>
+								<descriptor>${basedir}/src/assembly/processing-lib-style.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+					<execution>
+						<id>make-web</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<descriptors>
+								<descriptor>${basedir}/src/assembly/web.xml</descriptor>
+							</descriptors>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>

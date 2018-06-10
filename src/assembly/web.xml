@@ -1,0 +1,48 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+
+	<id>web</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	
+	<fileSets>
+		<fileSet>
+			<outputDirectory>download</outputDirectory>
+			<directory>${project.build.directory}</directory>
+			<includes>
+				<include>Moonlander*.zip</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<outputDirectory>examples</outputDirectory>
+			<directory>${basedir}/examples</directory>
+			<includes>
+				<include>**</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<outputDirectory>/</outputDirectory>
+			<directory>${basedir}/src/web</directory>
+			<includes>
+				<include>*</include>
+			</includes>
+			<!-- replace maven properties in the file -->
+			<filtered>true</filtered>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>reference</outputDirectory>
+			<useProjectArtifact>false</useProjectArtifact>
+			<useProjectAttachments>true</useProjectAttachments>
+			<unpack>true</unpack>
+			<includes>
+				<include>moonlander:Moonlander:*:javadoc</include>
+			</includes>
+		</dependencySet>
+	</dependencySets>
+	
+</assembly>

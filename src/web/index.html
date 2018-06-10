@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<title>##library.name##</title>
+<title>${lib.name}</title>
 <meta name="description" content="A library for the Processing programming environment" />
 <meta name="keywords" content="processing.org, library, ##library.keywords##" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -10,7 +10,7 @@
 <meta name="ROBOTS" content="index,follow,archive" />
 <meta http-equiv="imagetoolbar" content="false" />
 <meta name="MSSmartTagsPreventParsing" content="true" />
-<meta name="author" content="##author.name##" />
+<meta name="author" content="{lib.author}" />
 <meta name="Rating" content="General" />
 <meta name="revisit-after" content="7 Days" />
 <meta name="doc-class" content="Living Document" />
@@ -20,7 +20,7 @@
 	<div id="container">
 	
 		<div id="header">
-			<h1>##library.name##</h1>
+			<h1>${lib.name}</h1>
 		</div>
 		
 		<div id="menu" class="clear">
@@ -39,9 +39,9 @@
 		<div id="content" class="clear">
 			
 			<div id="about">
-			<h2>##library.name##</h2>
+			<h2>${lib.name}</h2>
 			<p>
-			A library by <a href="##author.url##">##author.name##</a> for the <a href="http://www.processing.org" target="_blank">Processing</a> programming environment.<br>
+			A library by <a href="##author.url##">{lib.author}</a> for the <a href="http://www.processing.org" target="_blank">Processing</a> programming environment.<br>
 			Last update, ##date##.
 			</p>
             <p><b>See <a href="INSTALL.txt">INSTALL.txt</a>. The best documentation is currently available at <a href="https://github.com/anttihirvonen/moonlander/" target="_blank">Github</a> (just scroll down to the documentation).</b></p>
@@ -54,7 +54,7 @@
 			<div id="download" class="clear">
 			<h2>Download</h2>
 			<p>
-			Download ##library.name## version ##library.prettyVersion## (##library.version##) in 
+			Download ${lib.name} version ##library.prettyVersion## (##library.version##) in 
 			<a href="./download/##project.name##-##library.version##.zip">.zip format</a>.
 			</p>
 			<h2>Installation</h2>
@@ -67,13 +67,13 @@
 			<div id="resources">
 			<p><strong>Keywords</strong>. ##library.keywords##</p>
 			<p><strong>Reference</strong>. Have a look at the javadoc reference <a href="./reference/index.html" target="_blank">here</a>. A copy of the reference is included in the .zip as well.</p>		
-			<p><strong>Source</strong>. The source code of ##library.name## is available at <a href="##source.url##">##source.host##</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.</p>			
+			<p><strong>Source</strong>. The source code of ${lib.name} is available at <a href="##source.url##">##source.host##</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.</p>			
 			</div>
 			
 			
 			<div id="examples" class="clear">
 			<h2>Examples</h2>
-			<p>Find a list of examples in the current distribution of ##library.name##, or have a look at them by following the links below.</p>
+			<p>Find a list of examples in the current distribution of ${lib.name}, or have a look at them by following the links below.</p>
             <p><b>Be sure to check the README.md files in the directories of examples (in the zip-file).</b></p>
 			<ul>
 			##examples##
@@ -128,7 +128,7 @@
 		</div>
 		
 		<div id="footer">
-			<p>by ##author.name##, ##copyright##.</p>
+			<p>by {lib.author}, ##copyright##.</p>
 		</div>
 	</div>
 </body>
