@@ -100,6 +100,9 @@ class TrackKey implements Comparable<TrackKey> {
             case RAMP:
                 t = Math.pow(t, 2.0);
                 break;
+            case LINEAR:
+            	//do nothing, default t is fine
+            	break;
         }
 
         return first.value + (second.value - first.value) * t;

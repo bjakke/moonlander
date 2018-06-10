@@ -1,16 +1,14 @@
 package moonlander.library;
 
-import java.util.logging.Logger;
-import java.util.logging.Level;
-
 import java.io.File;
-import org.w3c.dom.Document;
-import org.w3c.dom.*;
+import java.util.logging.Logger;
 
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
-import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException; 
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList; 
 
 
 /*

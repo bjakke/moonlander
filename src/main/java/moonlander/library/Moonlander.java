@@ -32,13 +32,13 @@
 package moonlander.library;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Collections;
-import java.util.logging.*;
-import processing.core.*;
-import ddf.minim.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
+import processing.core.PApplet;
 
 
 /**
