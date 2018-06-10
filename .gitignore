@@ -1,4 +1,6 @@
 distribution
 bin
+.classpath
+.project
 
 .DS_Store
