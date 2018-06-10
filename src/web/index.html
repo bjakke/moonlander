@@ -54,12 +54,12 @@
 			<div id="download" class="clear">
 			<h2>Download</h2>
 			<p>
-			Download ${lib.name} version ##library.prettyVersion## (##library.version##) in 
-			<a href="./download/##project.name##-##library.version##.zip">.zip format</a>.
+			Download ${lib.name} version ${lib.version} (##library.version##) in 
+			<a href="./download/${lib.name}-##library.version##.zip">.zip format</a>.
 			</p>
 			<h2>Installation</h2>
 			<p>
-			Unzip and put the extracted ##project.name## folder into the libraries folder of your Processing sketches. Reference and examples are included in the ##project.name## folder.
+			Unzip and put the extracted ${lib.name} folder into the libraries folder of your Processing sketches. Reference and examples are included in the ${lib.name} folder.
 			</p>
 			</div>	
 			
@@ -67,7 +67,7 @@
 			<div id="resources">
 			<p><strong>Keywords</strong>. ${lib.keywords}</p>
 			<p><strong>Reference</strong>. Have a look at the javadoc reference <a href="./reference/index.html" target="_blank">here</a>. A copy of the reference is included in the .zip as well.</p>		
-			<p><strong>Source</strong>. The source code of ${lib.name} is available at <a href="##source.url##">##source.host##</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.</p>			
+			<p><strong>Source</strong>. The source code of ${lib.name} is available at <a href="${lib.source.url}">${lib.source.host}</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.</p>			
 			</div>
 			
 			
@@ -88,10 +88,10 @@
 			<strong>Platform</strong> ${lib.tested.platform}
 			
 			<!-- which processing version did you use for testing your library? -->
-			<br /><strong>Processing</strong> ##tested.processingVersion##
+			<br /><strong>Processing</strong> ${tested.processingVersion}
 			
 			<!-- does your library depend on any other library or framework? -->
-			<br /><strong>Dependencies</strong> ##library.dependencies##
+			<br /><strong>Dependencies</strong> ${lib.dependencies}
 			</p>
 			</div>
 		
@@ -128,7 +128,7 @@
 		</div>
 		
 		<div id="footer">
-			<p>by ${lib.author}, ##copyright##.</p>
+			<p>by ${lib.author}, ${lib.copyright}.</p>
 		</div>
 	</div>
 </body>
