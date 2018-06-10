@@ -17,7 +17,7 @@
 		<lib.authorList>[Antti Hirvonen](http://github.com/anttihirvonen)</lib.authorList>
 		<lib.author.name>Antti Hirvonen</lib.author.name>
 		<lib.author.url>http://github.com/anttihirvonen</lib.author.url>
-		<lib.author>${author.name} ${author.url}</lib.author>
+		<lib.author>${lib.author.name} ${lib.author.url}</lib.author>
 		<lib.url>http://github.com/anttihirvonen/moonlander</lib.url>
 	</properties>
 

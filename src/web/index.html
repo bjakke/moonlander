@@ -4,13 +4,13 @@
 <head>
 <title>${lib.name}</title>
 <meta name="description" content="A library for the Processing programming environment" />
-<meta name="keywords" content="processing.org, library, ##library.keywords##" />
+<meta name="keywords" content="processing.org, library, ${lib.keywords}" />
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="en-us" />
 <meta name="ROBOTS" content="index,follow,archive" />
 <meta http-equiv="imagetoolbar" content="false" />
 <meta name="MSSmartTagsPreventParsing" content="true" />
-<meta name="author" content="{lib.author}" />
+<meta name="author" content="${lib.author}" />
 <meta name="Rating" content="General" />
 <meta name="revisit-after" content="7 Days" />
 <meta name="doc-class" content="Living Document" />
@@ -41,7 +41,7 @@
 			<div id="about">
 			<h2>${lib.name}</h2>
 			<p>
-			A library by <a href="${lib.author.url}">{lib.author}</a> for the <a href="http://www.processing.org" target="_blank">Processing</a> programming environment.<br>
+			A library by <a href="${lib.author.url}">${lib.author}</a> for the <a href="http://www.processing.org" target="_blank">Processing</a> programming environment.<br>
 			Last update, ${lib.date}.
 			</p>
             <p><b>See <a href="INSTALL.txt">INSTALL.txt</a>. The best documentation is currently available at <a href="https://github.com/anttihirvonen/moonlander/" target="_blank">Github</a> (just scroll down to the documentation).</b></p>
@@ -65,7 +65,7 @@
 			
 			
 			<div id="resources">
-			<p><strong>Keywords</strong>. ##library.keywords##</p>
+			<p><strong>Keywords</strong>. ${lib.keywords}</p>
 			<p><strong>Reference</strong>. Have a look at the javadoc reference <a href="./reference/index.html" target="_blank">here</a>. A copy of the reference is included in the .zip as well.</p>		
 			<p><strong>Source</strong>. The source code of ${lib.name} is available at <a href="##source.url##">##source.host##</a>, and its repository can be browsed <a href="##source.repository##" target="_blank">here</a>.</p>			
 			</div>
@@ -85,7 +85,7 @@
 			<h2>Tested</h2>
 			<p>
 			<!-- on which platform has the library been tested? -->
-			<strong>Platform</strong> ##tested.platform##
+			<strong>Platform</strong> ${lib.tested.platform}
 			
 			<!-- which processing version did you use for testing your library? -->
 			<br /><strong>Processing</strong> ##tested.processingVersion##
@@ -128,7 +128,7 @@
 		</div>
 		
 		<div id="footer">
-			<p>by {lib.author}, ##copyright##.</p>
+			<p>by ${lib.author}, ##copyright##.</p>
 		</div>
 	</div>
 </body>
