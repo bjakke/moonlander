@@ -17,6 +17,15 @@
 				<include>**</include>
 			</includes>
 		</fileSet>
+		<fileSet>
+			<outputDirectory>/</outputDirectory>
+			<directory>${basedir}/src/distribution</directory>
+			<includes>
+				<include>library.properties</include>
+			</includes>
+			<!-- replace maven properties in the file -->
+			<filtered>true</filtered>
+		</fileSet>
 	</fileSets>
 	<dependencySets>
 		<dependencySet>
