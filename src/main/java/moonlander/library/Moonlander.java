@@ -142,6 +142,24 @@ public class Moonlander {
         return true;
     }
 
+    /** 
+     * Load only from file.
+     *
+     * @return true if connector was initialized, otherwise false.
+     */
+    public boolean start(String filePath) {
+
+            try {
+                connector = new ProjectFileConnector(logger, tracks, controller, parent.sketchPath(filePath));
+            } catch (Exception ex) {
+                logger.severe("Could not load file:"+filePath);
+                return false;
+            }
+       
+        logger.info("Moonlander initialized successfully.");
+        return true;
+    }
+    
     /**
      * Shortcut for starting Moonlander with sane defaults.
      *
